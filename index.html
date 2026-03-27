@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Freddy's Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #login, #menu, #gameplay, #ending { display: none; }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <h1>Login</h1>
+        <input type="text" id="code" placeholder="Enter Code">
+        <button onclick="login()">Submit</button>
+    </div>
+
+    <div id="menu">
+        <h1>Select Animatronic</h1>
+        <button onclick="startGame('Freddy')">Freddy</button>
+        <button onclick="startGame('Bonnie')">Bonnie</button>
+        <button onclick="startGame('Chica')">Chica</button>
+    </div>
+
+    <div id="gameplay">
+        <h1>Gameplay</h1>
+        <p id="nightStatus"></p>
+        <button onclick="managePower()">Manage Power</button>
+        <button onclick="jumpScare()">Check Lights</button>
+    </div>
+
+    <div id="ending">
+        <h1>Ending Cutscene</h1>
+        <p>Newspaper Article: "Five Nights at Freddy's: A New Dawn."</p>
+    </div>
+
+    <script>
+        let currentNight = 1;
+        let power = 100;
+
+        function login() {
+            const code = document.getElementById('code').value;
+            if (code === 'Ayden') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('menu').style.display = 'block';
+            } else {
+                alert('Incorrect Code!');
+            }
+        }
+
+        function startGame(animatronic) {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('gameplay').style.display = 'block';
+            document.getElementById('nightStatus').textContent = `You're on Night ${currentNight} against ${animatronic}.`;
+            // Game logic for Nights, Power Management, Jump Scares
+        }
+
+        function managePower() {
+            power -= 10; // example power management
+            if (power <= 0) {
+                alert('You ran out of power! Game Over!');
+                endGame();
+            } else {
+                alert(`Power: ${power}%`);
+            }
+        }
+
+        function jumpScare() {
+            alert('Jump scare! Be careful!');
+            // Logic for jump scares
+        }
+
+        function endGame() {
+            document.getElementById('gameplay').style.display = 'none';
+            document.getElementById('ending').style.display = 'block';
+        }
+
+    </script>
+</body>
+</html>
