@@ -1,0 +1,110 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Login Screen Styles */
+.login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Menu Styles */
+.menu {
+    background-color: #555;
+    padding: 10px;
+    text-align: center;
+}
+
+.menu button {
+    background-color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Gameplay HUD */
+.hud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+}
+
+.power-bar {
+    width: 100%;
+    background-color: #222;
+    position: relative;
+}
+
+.power-bar span {
+    display: block;
+    background-color: #ff0000;
+    height: 100%;
+}
+
+/* Office View */
+.office-view {
+    position: relative;
+    background: url('/images/office-background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.clickable-object {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.clickable-object:hover {
+    transform: scale(1.1);
+}
+
+/* Cutscene Styles */
+.cutscene {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Ending Screen Styles */
+.ending-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #000;
+}
+
+/* Camera Feeds */
+.camera-feed {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
